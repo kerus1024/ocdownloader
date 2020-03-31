@@ -49,7 +49,7 @@ class YouTube
 
         $Output = shell_exec(
             $this->YTDLBinary.' -i \''.$this->URL.'\' --get-url --get-filename'
-            .($ExtractAudio?' -f bestaudio -x':' -f best').($this->ForceIPv4 ? ' -4' : '')
+            .($ExtractAudio?' -f bestaudio -x':' -f bestvideo+bestaudio').($this->ForceIPv4 ? ' -4' : '')
             .(is_null($Proxy) ? '' : $Proxy)
         );
 
